@@ -175,6 +175,7 @@ gitNewBranch(){
 }
 
 alias gnewb="gitNewBranch "
+alias gb="git branch"
 alias gdelete="git branch --delete "
 alias grmain="git rebase origin/main"
 
