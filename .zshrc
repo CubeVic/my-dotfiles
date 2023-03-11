@@ -76,6 +76,11 @@ git
 vscode
 pip
 adb
+web-search
+history
+jsontools
+git-auto-fetch
+macos
 zsh-autosuggestions
 zsh-interactive-cd
 zsh-syntax-highlighting
@@ -146,6 +151,11 @@ export PATH="$PATH:/Users/vktor/.local/bin"
 # to use fzf plug-in
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# ----------------------
+# Alias   --------------
+
+alias szsh="source ~/.zshrc"
 
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
