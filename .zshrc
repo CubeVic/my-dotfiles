@@ -159,7 +159,7 @@ alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
 ### git Alias ---------------
 
 alias gsw="git switch main"
-alias gswt="git switch "
+alias gsw!="git switch "
 
 alias gst="git status"
 alias gl="git log --all --oneline --graph --decorate"
