@@ -157,9 +157,6 @@ export PATH="$PATH:/Users/vktor/.local/bin"
 
 alias szsh="source ~/.zshrc"
 
-
-
-
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
 source /Users/vktor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
