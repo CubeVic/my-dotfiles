@@ -157,7 +157,11 @@ export PATH="$PATH:/Users/vktor/.local/bin"
 alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
 
 ### git Alias ---------------
-alias gs="git status"
+
+alias gsw="git switch main"
+alias gswt="git switch "
+
+alias gst="git status"
 alias gl="git log --all --oneline --graph --decorate"
 alias ga="git add "
 alias gco="git commit -m"
