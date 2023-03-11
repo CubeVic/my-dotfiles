@@ -1,7 +1,3 @@
-# Configuration to enable Autocomplete 
-source ~/Git/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-
 # If you come from bash you might have to change your $PATH.
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -158,8 +154,29 @@ export PATH="$PATH:/Users/vktor/.local/bin"
 
 # ----------------------
 # Alias   --------------
+alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
 
-alias szsh="source ~/.zshrc"
+### git Alias ---------------
+alias gs="git status"
+alias gl="git log --all --oneline --graph --decorate"
+alias ga="git add "
+alias gco="git commit -m"
+alias gcoa\!="git commit --amend"
+alias gcoa="git commit --amend --no-edit"
+alias gpush="git push "
+alias gpush\!="git push -f | echo 'executing git push -f'"
+alias gpushup="git push -u origin "
+alias gpull="git pull"
+alias gcb="git chechout -b"
+
+gitNewBranch(){
+    git checkout -b $1 origin/main
+    echo "New branch '$1' base on origin/main"
+}
+
+alias gnewb="gitNewBranch "
+alias gdelete="git branch --delete "
+alias grmain="git rebase origin/main"
 
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
