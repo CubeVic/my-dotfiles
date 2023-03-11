@@ -1,9 +1,9 @@
 
 # my-dotfiles
 
-![badge-last-commit](https://img.shields.io/github/last-commit/CubeVic/my-dotfiles/main?color=blue&logo=github&style=flat-square)
+![badge-last-commit](https://img.shields.io/github/last-commit/CubeVic/my-dotfiles/main?style=for-the-badge&logo=github&logoColor=white&color=9900FF)
 
-These are my dotfiles. 
+These are my dotfiles.
 It is a mixture of the files use in my work mac and my personal mac, mostly related to cosmetic changes and 0h-my-zsh plug-in.
 
 ---
