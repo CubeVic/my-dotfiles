@@ -1,6 +1,12 @@
+
 # my-dotfiles
+
+![badge-last-commit](https://img.shields.io/github/last-commit/CubeVic/my-dotfiles/main?color=blue&logo=github&style=flat-square)
+
 These are my dotfiles. 
 It is a mixture of the files use in my work mac and my personal mac, mostly related to cosmetic changes and 0h-my-zsh plug-in.
+
+---
 
 # `.zshrc`
 
@@ -9,7 +15,6 @@ It is a mixture of the files use in my work mac and my personal mac, mostly rela
 ```shell
 ...
 plugins=(
-git
 vscode
 pip
 adb
@@ -24,8 +29,6 @@ zsh-syntax-highlighting
 )
 ...
 ```
-
-### git
 
 ### vscode
 
@@ -71,8 +74,42 @@ enabled
 
 ### zsh-syntax-highlighting
 
+---
 
+## Aliases
 
+```shell
+alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
+```
+
+### git Alias
+
+```shell
+alias gsw="git switch main"
+alias gsw!="git switch "
+
+alias gst="git status"
+alias gl="git log --all --oneline --graph --decorate"
+alias ga="git add "
+alias gco="git commit -m"
+alias gcoa\!="git commit --amend"
+alias gcoa="git commit --amend --no-edit"
+alias gpush="git push "
+alias gpush\!="git push -f | echo 'executing git push -f'"
+alias gpushup="git push -u origin "
+alias gpull="git pull"
+alias gcb="git chechout -b"
+
+gitNewBranch(){
+    git checkout -b $1 origin/main
+    echo "New branch '$1' base on origin/main"
+}
+
+alias gnewb="gitNewBranch "
+alias gb="git branch"
+alias gdelete="git branch --delete "
+alias grmain="git rebase origin/main"
+```
 
 
 
