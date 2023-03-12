@@ -13,6 +13,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 
 plugins=(
+ansible
+colorize
+dotenv
+ruby
+poetry
 vscode
 pip
 adb
@@ -25,7 +30,6 @@ zsh-autosuggestions
 zsh-interactive-cd
 zsh-syntax-highlighting
 )
-
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
@@ -98,4 +102,4 @@ alias grmain="git rebase origin/main"
 
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
-source /Users/vktor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
