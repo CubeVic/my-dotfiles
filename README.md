@@ -37,19 +37,19 @@ zsh-syntax-highlighting
 
 ### colorize
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize>
 
 "With this plugin you can syntax-highlight file contents of over 300 supported languages and other text formats." -repo README.md
 
 ### dotenv
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv>
 
 "Automatically load your project ENV variables from .env file when you cd into project root directory."-repo README.md
 
 ### ruby
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ruby
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ruby>
 
 "This plugin adds aliases for common commands used in dealing with Ruby and gem packages." -repo README.md
 
@@ -79,19 +79,19 @@ zsh-syntax-highlighting
 
 ### poetry
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry>
 
 Add [`poetry`](https://python-poetry.org/) completion.
 
 ### vscode
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode>
 
 "This plugin provides useful aliases to simplify the interaction between the command line and VS Code or VSCodium editor."-repo README.md
 
-#### Aliases 
+#### vscode Aliases
 
-**Common aliases**
+##### Common aliases
 
 | Alias                   | Command                        | Description                                                                                                 |
 | ----------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------- |
@@ -104,7 +104,7 @@ Add [`poetry`](https://python-poetry.org/) completion.
 | vscw                    | code --wait                    | Wait for the files to be closed before returning.                                                           |
 | vscu `dir`              | code --user-data-dir `dir`     | Specifies the directory that user data is kept in. Can be used to open multiple distinct instances of Code. |
 
-**Extensions aliases**
+##### Extensions aliases
 
 | Alias                   | Command                                                          | Description                       |
 | ----------------------- | ---------------------------------------------------------------- | --------------------------------- |
@@ -112,7 +112,7 @@ Add [`poetry`](https://python-poetry.org/) completion.
 | vscie `id or vsix-path` | code --install-extension `extension-id> or <extension-vsix-path` | Installs an extension.            |
 | vscue `id or vsix-path` | code --uninstall-extension `id or vsix-path`                     | Uninstalls an extension.          |
 
-**Other options**
+#### Other options
 
 | Alias        | Command                   | Description                                                                                                           |
 | ------------ | ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -122,11 +122,11 @@ Add [`poetry`](https://python-poetry.org/) completion.
 
 ### pip
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip>
 
 "This plugin adds completion for pip, the Python package manager."-repo README.md
 
-#### Aliases
+#### pip Aliases
 
 | Alias    | Description                                   |
 | :------- | :-------------------------------------------- |
@@ -145,7 +145,7 @@ Add [`poetry`](https://python-poetry.org/) completion.
 
 ### adb
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/adb
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/adb>
 
 "Adds autocomplete options for all adb commands."-repo README.md
 
@@ -153,7 +153,7 @@ Add [`poetry`](https://python-poetry.org/) completion.
 
 ### web-search
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search>
 
 "This plugin adds aliases for searching with Google, Wiki, Bing, YouTube and other popular services." -repo README.md
 
@@ -170,11 +170,11 @@ some of the available context search contexts are:
 
 ### History
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history>
 
 "Provides a couple of convenient aliases for using the history command to examine your command line history."-repo README.md
 
-#### Aliases
+#### History Aliases
 
 | Alias | Command              | Description                                                      |
 |-------|----------------------|------------------------------------------------------------------|
@@ -184,7 +184,7 @@ some of the available context search contexts are:
 
 ### jsontools
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools>
 
 "Handy command line tools for dealing with json data."-repo README
 
@@ -199,7 +199,7 @@ some of the available context search contexts are:
 
 ### git-auto-fetch
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-auto-fetch
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-auto-fetch>
 
 In case we need to enable or disable it per folder:
 
@@ -213,7 +213,7 @@ enabled
 
 ### macos
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos>
 
 "This plugin provides a few utilities to make it more enjoyable on macOS (previously named OSX)."-repo README.md
 
@@ -239,12 +239,11 @@ Here some of the commands
 
 ### zsh-autosuggestions
 
-:house: repo: https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-
+:house: repo: <https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md>
 
 ### zsh-interactive-cd
 
-:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-interactive-cd
+:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-interactive-cd>
 
 Provide some interaction for the cd command
 
@@ -252,13 +251,13 @@ Provide some interaction for the cd command
 
 ### zsh-syntax-highlighting
 
-:house: repo: https://github.com/zsh-users/zsh-syntax-highlighting
+:house: repo: <https://github.com/zsh-users/zsh-syntax-highlighting>
 
 "Fish shell-like syntax highlighting for Zsh."-repo README.md
 
 ---
 
-## Aliases
+## Custom Aliases
 
 ```shell
 alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
@@ -291,15 +290,19 @@ alias gnewb="gitNewBranch "
 alias gb="git branch"
 alias gdelete="git branch --delete "
 alias grmain="git rebase origin/main"
+
+alias gshm="git stash save -m"
+alias gshpop="git stash pop"
+alias gshl="git stash list"
 ```
-
-
 
 ## What is `git clone --depth 1`
 
 > This is use in the oh-my-zsh plug-in for autocomplete
+
 ```shell
 % cd ~/Git  # ...or wherever you keep your Git repos/Zsh plugins
 % git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
 ```
-When developers perform a `git clone --depth 1` operation, the only thing they pull back from the remote repository is the latest commit on the specific git branch of interest. 
+
+When developers perform a `git clone --depth 1` operation, the only thing they pull back from the remote repository is the latest commit on the specific git branch of interest.
