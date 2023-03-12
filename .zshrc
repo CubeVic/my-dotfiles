@@ -8,6 +8,8 @@ ZSH_THEME="robbyrussell"
 # Set list of themes to pick from when loading at random
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+VSCODE=code
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -98,6 +100,10 @@ alias gnewb="gitNewBranch "
 alias gb="git branch"
 alias gdelete="git branch --delete "
 alias grmain="git rebase origin/main"
+
+alias gshm="git stash save -m"
+alias gshpop="git stash pop"
+alias gshl="git stash list"
 
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
