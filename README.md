@@ -15,6 +15,12 @@ It is a mixture of the files use in my work mac and my personal mac, mostly rela
 ```shell
 ...
 plugins=(
+ansible
+colorize
+dotenv
+ruby
+emoji
+poetry
 vscode
 pip
 adb
@@ -29,6 +35,20 @@ zsh-syntax-highlighting
 )
 ...
 ```
+
+### ansible
+
+### colorize
+
+### dotenv
+
+### ruby
+
+### poetry
+
+:house: repo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry
+
+Add [`poetry`](https://python-poetry.org/) completion.
 
 ### vscode
 
