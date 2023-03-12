@@ -13,7 +13,6 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 
 plugins=(
-ansible
 colorize
 dotenv
 ruby
