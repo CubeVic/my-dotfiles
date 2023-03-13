@@ -1,5 +1,5 @@
 format = '''
-[┌──────>](bold blue)$git_branch$git_status$git_commit$python$rust$package
+[┌──────>](bold blue)$git_branch$git_status$git_commit$git_state$python$rust$ruby$nodejs$package
 [│](bold blue)$directory$fill$battery$cmd_duration
 [└─>](bold blue)$username$character '''
 
