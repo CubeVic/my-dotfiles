@@ -1,6 +1,6 @@
 format = '''
 [┌──────>](bold blue)$git_branch$git_status$git_commit$python$rust$package
-[│](blue)$directory$fill$battery$cmd_duration
+[│](bold blue)$directory$fill$battery$cmd_duration
 [└─>](bold blue)$username$character '''
 
 
@@ -55,6 +55,9 @@ format = '\[[$symbol($version)]($style)\]'
 
 [docker_context]
 format = '\[[$symbol$context]($style)\]'
+
+[directory]
+style = 'bright black'
 
 [fill]
 symbol = '  '
