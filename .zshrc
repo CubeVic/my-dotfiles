@@ -48,7 +48,8 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(starship init zsh)"
 
 # adding poetry to the path 
-export PATH=$PATH:${HOME:-Users/vktor}/.pyenv/shims/poetry
+export PATH=$PATH:${HOME:-Users/vktor}/.local/bin/poetry
+
 # Configuration for verify commmit using gpg keys
 export GPG_TTY=$(tty)
 
