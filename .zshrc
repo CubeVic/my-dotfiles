@@ -108,6 +108,8 @@ alias gshm="git stash save -m"
 alias gshpop="git stash pop"
 alias gshl="git stash list"
 
+eval "$(op completion zsh)"; compdef _op op
+
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
