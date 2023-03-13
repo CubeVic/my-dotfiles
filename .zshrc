@@ -47,6 +47,8 @@ eval "$(pyenv virtualenv-init -)"
 # Start starship shell prompt
 eval "$(starship init zsh)"
 
+# adding poetry to the path 
+export PATH=$PATH:${HOME:-Users/vktor}/.pyenv/shims/poetry
 # Configuration for verify commmit using gpg keys
 export GPG_TTY=$(tty)
 
@@ -61,7 +63,7 @@ export PATH="/Users/vktor/Library/Android/sdk/platform-tools":$PATH
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/tools/bin:$PATH
 
-export OPENCV$NODEJS_DISABLE_AUTOBUILD=1
+# export OPENCV$NODEJS_DISABLE_AUTOBUILD=1
 
 # Created by `pipx` on 2023-03-07 07:28:20
 export PATH="$PATH:/Users/vktor/.local/bin"
