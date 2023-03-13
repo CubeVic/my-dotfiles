@@ -1,3 +1,4 @@
+tap "1password/tap"
 tap "benwebber/tunnelblickctl"
 tap "facebook/fb"
 tap "homebrew/bundle"
@@ -56,7 +57,7 @@ brew "facebook/fb/idb-companion"
 brew "lyft/formulae/set-simulator-location"
 # Apple simulator utilities
 brew "wix/brew/applesimutils"
+# Command-line helper for the 1Password password manager
+cask "1password-cli"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
-cask "visual-studio-code"
-cask "brave-browser"
