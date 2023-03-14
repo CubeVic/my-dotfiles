@@ -2,6 +2,7 @@ tap "1password/tap"
 tap "benwebber/tunnelblickctl"
 tap "facebook/fb"
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "lyft/formulae"
 tap "wix/brew"
 # General-purpose data compression with high compression ratio
@@ -61,3 +62,9 @@ brew "wix/brew/applesimutils"
 cask "1password-cli"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
+# Collaboration platform for API development
+cask "postman"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Virtualizer for x86 hardware
+cask "virtualbox"
