@@ -75,10 +75,13 @@ export PATH="$PATH:/Users/vktor/.local/bin"
 # Configuration for auto complete 1password
 eval "$(op completion zsh)"; compdef _op op
 
+# Only run when a new terminal is open.
+# source components 
 for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
     source "${conf}"
 done
 unset conf
+
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
