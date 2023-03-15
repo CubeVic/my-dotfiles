@@ -72,44 +72,13 @@ export PATH="$PATH:/Users/vktor/.local/bin"
 # to use fzf plug-in
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-# ----------------------
-# Alias   --------------
-alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
-
-### git Alias ---------------
-
-alias gsw="git switch main"
-alias gsw!="git switch "
-
-alias gst="git status"
-alias gl="git log --all --oneline --graph --decorate"
-alias ga="git add "
-alias gco="git commit -m"
-alias gcoa\!="git commit --amend"
-alias gcoa="git commit --amend --no-edit"
-alias gpush="git push "
-alias gpush\!="git push -f | echo 'executing git push -f'"
-alias gpushup="git push -u origin "
-alias gpull="git pull"
-alias gcb="git chechout -b"
-
-gitNewBranch(){
-    git checkout -b $1 origin/main
-    echo "New branch '$1' base on origin/main"
-}
-
-alias gnewb="gitNewBranch "
-alias gb="git branch"
-alias gdelete="git branch --delete "
-alias grmain="git rebase origin/main"
-
-alias gshm="git stash save -m"
-alias gshpop="git stash pop"
-alias gshl="git stash list"
-
+# Configuration for auto complete 1password
 eval "$(op completion zsh)"; compdef _op op
 
+for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
+    source "${conf}"
+done
+unset conf
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
