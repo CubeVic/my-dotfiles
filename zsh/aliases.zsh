@@ -1,8 +1,17 @@
-# ----------------------
-# Alias   --------------
+#  General Alias   --------------
 alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
+alias c="clear"
 
-### git Alias ---------------
+## remap exa to ls
+alias l="exa -l"
+alias ls="exa -l -a"
+alias ls-i="exa -l -a --icons"
+
+
+# suffix to define application handler base in extension 
+alias -s {.ymal, .yml}=code
+
+# git Alias ---------------
 
 alias gsw="git switch main"
 alias gsw!="git switch "
