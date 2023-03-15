@@ -36,12 +36,4 @@ alias gshl="git stash list"
 eval "$(op completion zsh)"; compdef _op op
 
 #---------------------------------------------
-#----VPN Alias -------------------------------
-connectVPN(){
-tunnelblickctl connect openvpn-testonly
-password=$(op item get "Test only VPN - qa06 - Victor" --vault "QA VPN - SportyBet" --fields label=password)
-password_NO_TRAIL_SPACE="$(echo -e "${password}" | xargs )"
-echo $password_NO_TRAIL_SPACE | tr -d "\n" | pbcopy
-}
 
-alias ovpn=connectVPN
