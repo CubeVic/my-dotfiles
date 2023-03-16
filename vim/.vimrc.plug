@@ -1,0 +1,19 @@
+call plug#begin('~/vim/plugged')
+
+"Fugitive vim GitHub warapper
+Plug 'tpope/vim-fugitive'
+"Dracula color scheme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+"Syntax related plugs
+Plug 'cespare/vim-toml'
+Plug 'scrooloose/syntastic'
+
+" fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+
+
+
+call plug#end()
+colorscheme dracula
