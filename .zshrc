@@ -53,14 +53,15 @@ export PATH=$PATH:${HOME:-Users/vktor}/.local/bin/poetry
 # Configuration for verify commmit using gpg keys
 export GPG_TTY=$(tty)
 
-# Configuretion for Appium
+#--------- Appium
+
 # Java location
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home
 # Android location
-export ANDROID_HOME=/Users/vktor/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 #adding to the PATH
 export PATH=$JAVA_HOME:$PATH
-export PATH="/Users/vktor/Library/Android/sdk/platform-tools":$PATH
+export PATH="$HOME/Library/Android/sdk/platform-tools":$PATH
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/tools/bin:$PATH
 
@@ -81,6 +82,10 @@ for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
     source "${conf}"
 done
 unset conf
+
+
+# make sure the PATHs are unique
+typeset -U PATH
 
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
