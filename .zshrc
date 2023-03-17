@@ -83,6 +83,8 @@ for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
 done
 unset conf
 
+# other change
+
 
 # make sure the PATHs are unique
 typeset -U PATH
