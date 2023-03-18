@@ -1,3 +1,4 @@
+#!/bin/sh
 # Display all the variables in the path
 
-echo $PATH | sed 's/:/\n/g' | sort | uniq -c
+echo "$PATH" | sed 's/:/\n/g' | sort | uniq -c
