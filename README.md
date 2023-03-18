@@ -3,6 +3,8 @@
 
 ![badge-last-commit](https://img.shields.io/github/last-commit/CubeVic/my-dotfiles/main?style=for-the-badge&logo=github&logoColor=white&color=9900FF)
 
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/CubeVic/my-dotfiles/main.svg)](https://results.pre-commit.ci/latest/github/CubeVic/my-dotfiles/main)
+
 These are my dotfiles.
 It is a mixture of the files use in my work mac and my personal mac, mostly related to cosmetic changes and 0h-my-zsh plug-in.
 
