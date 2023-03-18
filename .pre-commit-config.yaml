@@ -1,0 +1,25 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+
+- repo: https://github.com/scop/pre-commit-shfmt
+  rev: v3.6.0-1
+  hooks:
+    # Choose one of:
+    - id: shfmt         # native (requires Go to build)
+    - id: shfmt-docker  # Docker image (requires Docker to run)
+
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  rev: master  # or specific git tag
+  hooks:
+    - id: forbid-binary
+    - id: git-check
+    - id: script-must-not-have-extension
+    - id: shellcheck

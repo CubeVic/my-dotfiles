@@ -7,22 +7,20 @@ alias usage="du -ah -c -I .git"
 alias topten="history | sort -rn | head -15"
 alias dir="dirs -v | head "
 
-
 # --- Exa ------------------
 # --- re-map ls to exa
 alias l="exa -l"
 alias ls="exa -l -a"
 alias ls-i="exa -l -a --icons"
 
-
 # --- Git ---------------
-# Functions 
-gitNewBranch(){
-    git checkout -b $1 origin/main
-    echo "New branch '$1' base on origin/main"
+# Functions
+gitNewBranch() {
+	git checkout -b $1 origin/main
+	echo "New branch '$1' base on origin/main"
 }
 
-# General 
+# General
 alias g="git "
 
 # Status
@@ -67,13 +65,11 @@ alias gshl="git stash list"
 # Diff
 alias gd="git diff "
 
-
 # --- Define program to handle extensions
 # YAML
 alias -s {.ymal, .yml}=code
 
-
-eval "$(op completion zsh)"; compdef _op op
+eval "$(op completion zsh)"
+compdef _op op
 
 #---------------------------------------------
-
