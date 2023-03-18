@@ -16,7 +16,7 @@ alias ls-i="exa -l -a --icons"
 # --- Git ---------------
 # Functions
 gitNewBranch() {
-	git checkout -b $1 origin/main
+	git checkout -b "$1" origin/main
 	echo "New branch '$1' base on origin/main"
 }
 

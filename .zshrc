@@ -38,7 +38,7 @@ plugins=(
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # --- ZSH running oh-my-zsh -----------------------
-source $ZSH/oh-my-zsh.sh
+source "$ZSH"/oh-my-zsh.sh
 
 # --- Pyenv ----------------------------------------
 # Configuration for pyenv
@@ -55,7 +55,7 @@ eval "$(starship init zsh)"
 
 # --- Poetry -----------------------------------------
 # adding poetry to the path
-export PATH=$PATH:${HOME:-Users/vktor}/.local/bin/poetry
+export PATH="$PATH":"${HOME:-Users/vktor}"/.local/bin/poetry
 
 # --- GPG keys ----------------------------------------
 # Configuration for verify commmit using gpg keys
@@ -67,20 +67,20 @@ export GPG_TTY=$(tty)
 # Java location
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home
 
-export PATH=$JAVA_HOME:$PATH
+export PATH=$JAVA_HOME:"$PATH"
 
 # Android location
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
-export ANDROID_EMULATOR=$ANDROID_HOME/emulator
-export ANDROID_TOOLS=$ANDROID_HOME/tools
-export ANDROID_TOOLS_BIN=$ANDROID_TOOLS/bin
+export ANDROID_HOME="$HOME"/Library/Android/sdk
+export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME"/platform-tools
+export ANDROID_EMULATOR="$ANDROID_HOME"/emulator
+export ANDROID_TOOLS="$ANDROID_HOME"/tools
+export ANDROID_TOOLS_BIN="$ANDROID_TOOLS"/bin
 
-export PATH=$PATH:$ANDROID_HOME
-export PATH=$PATH:$ANDROID_PLATFORM_TOOLS
-export PATH=$PATH:$ANDROID_EMULATOR
-export PATH=$PATH:$ANDROID_TOOLS
-export PATH=$PATH:$ANDROID_TOOLS_BIN
+export PATH="$PATH":"$ANDROID_HOME"
+export PATH="$PATH":"$ANDROID_PLATFORM_TOOLS"
+export PATH="$PATH":"$ANDROID_EMULATOR"
+export PATH="$PATH":"$ANDROID_TOOLS"
+export PATH="$PATH":"$ANDROID_TOOLS_BIN"
 
 # export OPENCV$NODEJS_DISABLE_AUTOBUILD=1
 
@@ -89,6 +89,7 @@ export PATH=$PATH:$ANDROID_TOOLS_BIN
 export PATH="$PATH:/Users/vktor/.local/bin"
 
 # --- Fuzzy finder
+# shellcheck source=$HOME/.zsh/
 [ -f ~/.zsh/.fzf.zsh ] && source ~/.zsh/.fzf.zsh
 
 # --- OP or 1Password command line -------------
@@ -99,6 +100,7 @@ compdef _op op
 # --- Custom alias or scripts -------------------
 # source components
 for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
+	# shellcheck source=$HOME/.dotfiles/zsh/
 	source "${conf}"
 done
 unset conf
@@ -109,4 +111,4 @@ typeset -U PATH
 
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
