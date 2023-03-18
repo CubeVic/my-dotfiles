@@ -17,22 +17,22 @@ It is a mixture of the files use in my work mac and my personal mac, mostly rela
 ```shell
 ...
 plugins=(
-colorize
-dotenv
-ruby
-emoji
-poetry
-vscode
-pip
-adb
-web-search
-history
-jsontools
-git-auto-fetch
-macos
-zsh-autosuggestions
-zsh-interactive-cd
-zsh-syntax-highlighting
+    colorize
+    dotenv
+    ruby
+    emoji
+    poetry
+    vscode
+    pip
+    adb
+    web-search
+    history
+    jsontools
+    git-auto-fetch
+    macos
+    zsh-autosuggestions
+    zsh-interactive-cd
+    zsh-syntax-highlighting
 )
 ...
 ```
