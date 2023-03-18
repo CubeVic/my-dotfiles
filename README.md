@@ -95,16 +95,13 @@ Add [`poetry`](https://python-poetry.org/) completion.
 
 ##### Common aliases
 
-| Alias                   | Command                        | Description                                                                                                 |
-| ----------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| vsc                     | code .                         | Open the current folder in VS code                                                                          |
-| vsca `dir`              | code --add `dir`               | Add folder(s) to the last active window                                                                     |
-| vscd `file` `file`      | code --diff `file` `file`      | Compare two files with each other.                                                                          |
-| vscg `file:line[:char]` | code --goto `file:line[:char]` | Open a file at the path on the specified line and character position.                                       |
-| vscn                    | code --new-window              | Force to open a new window.                                                                                 |
-| vscr                    | code --reuse-window            | Force to open a file or folder in the last active window.                                                   |
-| vscw                    | code --wait                    | Wait for the files to be closed before returning.                                                           |
-| vscu `dir`              | code --user-data-dir `dir`     | Specifies the directory that user data is kept in. Can be used to open multiple distinct instances of Code. |
+| Alias               | Command      | Description                                                                                    |
+| ------------------- | ------------ | ---------------------------------------------------------------------------------------------- |
+| vsc                 | code .       | Open the current folder in VS code                                                             |
+| vsca `dir`          | code --add `dir`           | Add folder(s) to the last active window                                          |
+| vscd `file` `file`  | code --diff `file` `file`  | Compare two files with each other.                                               |
+| vscg `file:line[:char]` | code --goto `file:line[:char]` | Open a file at the path on the specified line and character position.    |
+| vscn                    | code --new-window              | Force to open a new window.                                              |
 
 ##### Extensions aliases
 
@@ -116,11 +113,11 @@ Add [`poetry`](https://python-poetry.org/) completion.
 
 #### Other options
 
-| Alias        | Command                   | Description                                                                                                           |
-| ------------ | ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| vscv         | code --verbose            | Print verbose output (implies --wait).                                                                                |
-| vscl `level` | code --log `level`        | Log level to use. Default is 'info'. Allowed values are 'critical', 'error', 'warn', 'info', 'debug', 'trace', 'off'. |
-| vscde        | code --disable-extensions | Disable all installed extensions.                                                                                     |
+| Alias        | Command             | Description                                                                                       |
+| ------------ | ------------------- | ------------------------------------------------------------------------------------------------- |
+| vscv         | code --verbose      | Print verbose output (implies --wait).                                                            |
+| vscl `level` | code --log `level`  | Log level to use. Default is 'info'. Allowed values are 'critical', 'error', 'warn', 'info', 'debug', 'trace', 'off'. |
+| vscde        | code --disable-extensions | Disable all installed extensions.                                                           |
 
 ### pip
 
@@ -258,46 +255,6 @@ Provide some interaction for the cd command
 "Fish shell-like syntax highlighting for Zsh."-repo README.md
 
 ---
-
-## Custom Aliases
-
-```shell
-alias szsh="source ~/.zshrc | echo 'sourcing .zshrc'"
-```
-
-### git Alias
-
-```shell
-alias gsw="git switch main"
-alias gsw!="git switch "
-
-alias gst="git status"
-alias gl="git log --all --oneline --graph --decorate"
-alias ga="git add "
-alias gco="git commit -m"
-alias gcoa\!="git commit --amend"
-alias gcoa="git commit --amend --no-edit"
-alias gpush="git push "
-alias gpush\!="git push -f | echo 'executing git push -f'"
-alias gpushup="git push -u origin "
-alias gpull="git pull"
-alias gcb="git chechout -b"
-
-gitNewBranch(){
-    git checkout -b $1 origin/main
-    echo "New branch '$1' base on origin/main"
-}
-
-alias gnewb="gitNewBranch "
-alias gb="git branch"
-alias gdelete="git branch --delete "
-alias grmain="git rebase origin/main"
-
-alias gshm="git stash save -m"
-alias gshpop="git stash pop"
-alias gshl="git stash list"
-```
-
 ## What is `git clone --depth 1`
 
 > This is use in the oh-my-zsh plug-in for autocomplete
