@@ -2,15 +2,22 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+
+# --- ZHS Themes --------------------------------
+#
 # ZHS Theme
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+
+# --- VSCODE ------------------------------------
+# set the edition/type of VSCODE
 VSCODE=code
 
-# Which plugins would you like to load?
+
+# --- Plugins -----------------------------------
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 
@@ -33,10 +40,14 @@ zsh-syntax-highlighting
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+
+# --- ZSH running oh-my-zsh -----------------------
 source $ZSH/oh-my-zsh.sh
 
-# Configuration for pyenv
 
+# --- Pyenv ----------------------------------------
+# Configuration for pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -44,46 +55,69 @@ eval "$(pyenv init -)"
 # Config to activate virtual env automatically after navigate to folder 
 eval "$(pyenv virtualenv-init -)"
 
+
+# --- Starship prompt -------------------------------
 # Start starship shell prompt
 eval "$(starship init zsh)"
 
+
+# --- Poetry -----------------------------------------
 # adding poetry to the path 
 export PATH=$PATH:${HOME:-Users/vktor}/.local/bin/poetry
 
+
+# --- GPG keys ----------------------------------------
 # Configuration for verify commmit using gpg keys
 export GPG_TTY=$(tty)
 
-#--------- Appium
+
+# --- APPIUM -------------------------------------------
+# PATH Variables for Appium
 
 # Java location
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home
+
+export PATH=$JAVA_HOME:$PATH
+
 # Android location
 export ANDROID_HOME=$HOME/Library/Android/sdk
-#adding to the PATH
-export PATH=$JAVA_HOME:$PATH
-export PATH="$HOME/Library/Android/sdk/platform-tools":$PATH
-export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
-export PATH=$ANDROID_HOME/tools/bin:$PATH
+export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+export ANDROID_EMULATOR=$ANDROID_HOME/emulator
+export ANDROID_TOOLS=$ANDROID_HOME/tools
+export ANDROID_TOOLS_BIN=$ANDROID_TOOLS/bin
+
+export PATH=$PATH:$ANDROID_HOME
+export PATH=$PATH:$ANDROID_PLATFORM_TOOLS
+export PATH=$PATH:$ANDROID_EMULATOR
+export PATH=$PATH:$ANDROID_TOOLS
+export PATH=$PATH:$ANDROID_TOOLS_BIN
+
 
 # export OPENCV$NODEJS_DISABLE_AUTOBUILD=1
 
+
+# --- PIPX --------------------------------
 # Created by `pipx` on 2023-03-07 07:28:20
 export PATH="$PATH:/Users/vktor/.local/bin"
 
-# to use fzf plug-in
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# --- Fuzzy finder 
+[ -f ~/.zsh/.fzf.zsh ] && source ~/.zsh/.fzf.zsh
+
+
+# --- OP or 1Password command line -------------
 # Configuration for auto complete 1password
 eval "$(op completion zsh)"; compdef _op op
 
-# Only run when a new terminal is open.
+
+# --- Custom alias or scripts -------------------
 # source components 
 for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
     source "${conf}"
 done
 unset conf
 
-
+# --- Extras --------------------------------------
 # make sure the PATHs are unique
 typeset -U PATH
 
