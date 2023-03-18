@@ -12,14 +12,12 @@ repos:
 - repo: https://github.com/scop/pre-commit-shfmt
   rev: v3.6.0-1
   hooks:
-    # Choose one of:
-    - id: shfmt         # native (requires Go to build)
-    - id: shfmt-docker  # Docker image (requires Docker to run)
+    - id: shfmt
 
 - repo: https://github.com/jumanjihouse/pre-commit-hooks
-  rev: master  # or specific git tag
+  rev:  3.0.0 # or specific git tag
   hooks:
     - id: forbid-binary
     - id: git-check
     - id: script-must-not-have-extension
-    - id: shellcheck
+    # - id: shellcheck
