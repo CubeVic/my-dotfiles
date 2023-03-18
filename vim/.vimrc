@@ -4,16 +4,16 @@ set nocompatible
 " set wrap text
 set wrap
 
-" Encoding 
+" Encoding
 set encoding=utf-8
 
-" Set line numbers 
+" Set line numbers
 set number
 
 " Set status bar
 set laststatus=2
 
-" Call the .vimrc.plug file 
+" Call the .vimrc.plug file
 if filereadable(expand("~/.vimrc.plug"))
 	source ~/.vimrc.plug
 endif
