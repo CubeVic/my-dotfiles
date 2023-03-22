@@ -2,7 +2,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # --- ZHS Themes --------------------------------
-#
 # ZHS Theme
 ZSH_THEME="robbyrussell"
 
