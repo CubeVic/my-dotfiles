@@ -8,6 +8,8 @@ ZSH_THEME="robbyrussell"
 # Set list of themes to pick from when loading at random
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+
+
 # --- VSCODE ------------------------------------
 # set the edition/type of VSCODE
 VSCODE=code
