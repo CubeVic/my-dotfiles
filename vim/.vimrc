@@ -14,6 +14,6 @@ set number
 set laststatus=2
 
 " Call the .vimrc.plug file
-if filereadable(expand("~/.vimrc.plug"))
-	source ~/.vimrc.plug
+if filereadable(expand("~/.vim/.vimrc.plug"))
+	source ~/.vim/.vimrc.plug
 endif

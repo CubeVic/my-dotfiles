@@ -40,6 +40,10 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 # --- ZSH running oh-my-zsh -----------------------
 source "$ZSH"/oh-my-zsh.sh
 
+# --- Brew -----------------------------------------
+export BREW=/opt/homebrew/bin
+export PATH="$BREW":"$PATH"
+
 # --- Pyenv ----------------------------------------
 # Configuration for pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -112,3 +116,4 @@ typeset -U PATH
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
 source "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME"/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
