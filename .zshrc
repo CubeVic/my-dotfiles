@@ -44,13 +44,12 @@ export BREW=/opt/homebrew/bin
 export PATH="$BREW":"$PATH"
 
 # --- Pyenv ----------------------------------------
-# Configuration for pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+# activate virtual enviroment if available
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-# Config to activate virtual env automatically after navigate to folder
-eval "$(pyenv virtualenv-init -)"
 
 # --- Starship prompt -------------------------------
 # Start starship shell prompt
@@ -88,8 +87,8 @@ export PATH="$PATH":"$ANDROID_TOOLS_BIN"
 # export OPENCV$NODEJS_DISABLE_AUTOBUILD=1
 
 # --- PIPX --------------------------------
-# Created by `pipx` on 2023-03-07 07:28:20
-export PATH="$PATH:/Users/vktor/.local/bin"
+# Created by `pipx` on 2023-03-23 06:16:09
+export PATH="$PATH":"$HOME"/.local/bin
 
 # --- Fuzzy finder
 # shellcheck source=$HOME/.zsh/
