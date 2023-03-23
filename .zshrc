@@ -58,7 +58,7 @@ eval "$(starship init zsh)"
 
 # --- Poetry -----------------------------------------
 # adding poetry to the path
-export PATH="$PATH":"${HOME:-Users/vktor}"/.local/bin/poetry
+export PATH="$PATH":"$HOME"/.local/bin/poetry
 
 # --- GPG keys ----------------------------------------
 # Configuration for verify commmit using gpg keys
@@ -68,7 +68,7 @@ export GPG_TTY=$(tty)
 # PATH Variables for Appium
 
 # Java location
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
 
 export PATH=$JAVA_HOME:"$PATH"
 
@@ -115,4 +115,3 @@ typeset -U PATH
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
 source "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source "$HOME"/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

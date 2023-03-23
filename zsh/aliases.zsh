@@ -58,9 +58,9 @@ alias gdelete="git branch --delete "
 alias grmain="git rebase origin/main"
 
 # Stash
-alias gshm="git stash save -m"
-alias gshpop="git stash pop"
-alias gshl="git stash list"
+alias gsthm="git stash save -m"
+alias gsthpop="git stash pop"
+alias gsthl="git stash list"
 
 # Diff
 alias gd="git diff "
