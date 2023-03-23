@@ -1,4 +1,4 @@
-# Alias for the scripts
+#Alias for the scripts
 #
 
-alias path-vars='zsh $HOME/.local/bin/path-vars.zsh'
+alias path-vars='zsh $HOME/.dotfiles/zsh/scripts/path-vars.zsh'
