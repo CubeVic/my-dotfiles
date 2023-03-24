@@ -86,7 +86,7 @@ export PATH="$PATH":"$ANDROID_TOOLS_BIN"
 # export OPENCV$NODEJS_DISABLE_AUTOBUILD=1
 
 # --- PIPX --------------------------------
-# Created by `pipx` on 2023-03-23 06:16:09
+# Created by `pipx` on 2023-03-24 06:16:09
 export PATH="$PATH":"$HOME"/.local/bin
 
 # --- Fuzzy finder
