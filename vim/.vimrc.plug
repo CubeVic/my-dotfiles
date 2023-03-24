@@ -12,8 +12,17 @@ Plug 'scrooloose/syntastic'
 " fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+" NERDTREE
+Plug 'preservim/nerdtree'
 
+" NERDTREE devicons
+Plug 'ryanoasis/vim-devicons'
 
+" Vim-airLine
+Plug 'vim-airline/vim-airline'
+
+" Docker tools
+Plug 'kkvh/vim-docker-tools'
 
 call plug#end()
 colorscheme dracula
