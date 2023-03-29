@@ -24,5 +24,18 @@ Plug 'vim-airline/vim-airline'
 " Docker tools
 Plug 'kkvh/vim-docker-tools'
 
+" IndentLin
+Plug 'Yggdroot/indentLine'
+
+" vim-yaml-folds
+Plug 'pedrohdz/vim-yaml-folds'
+
+" Ale -  Asynchronous syntax linter
+Plug 'w0rp/ale'
+
+" Vim YMAL
+
+Plug 'stephpy/vim-yaml'
+
 call plug#end()
 colorscheme dracula
