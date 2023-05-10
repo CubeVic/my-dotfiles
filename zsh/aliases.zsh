@@ -27,8 +27,14 @@ alias g="git "
 alias gst="git status"
 
 # Switch
-alias gsw="git switch main"
-alias gsw!="git switch "
+alias gswmain="git switch main"
+alias gswm="git switch master"
+alias gswd="git switch develop"
+alias gsw="git switch "
+
+# Merge
+alias gmd="git merge develop"
+alias gmc="git merge --continue"
 
 # Log
 alias gl="git log --all --oneline --graph --decorate"
