@@ -4,5 +4,5 @@ labels:
     files:
       - "zsh/**"
   - label: 'script_relate'
-    files: 
+    files:
       - "scripts/**"

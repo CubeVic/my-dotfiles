@@ -268,7 +268,7 @@ When developers perform a `git clone --depth 1` operation, the only thing they p
 
 
 Change log
----- 1 
+---- 1
 gsgsgd
 fsfsfsffsf
 
