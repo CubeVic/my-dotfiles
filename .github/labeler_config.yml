@@ -13,6 +13,3 @@ labels:
     size-below: 1000
   - label: "xlarge-diff"
     size-above: 999
-  - label: "zsh-related"
-    files:
-      - "zsh/**"
