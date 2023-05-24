@@ -1,5 +1,12 @@
 version: 1
 labels:
-  - label: "zsh-related_1"
-    files:
-      - "zsh/**"
+- label: "S"
+  size:
+      below: 10
+- label: "M"
+  size:
+      above: 9
+      below: 100
+- label: "L"
+  size:
+      above: 100
