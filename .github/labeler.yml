@@ -1,8 +1,2 @@
-version: 1
-labels:
-  - label: "zsh_related"
-    files:
-      - "zsh/**"
-  - label: 'script_relate'
-    files: 
-      - "scripts/**"
+zsh_related: "zsh/**"
+script_relate: "scripts/**"
