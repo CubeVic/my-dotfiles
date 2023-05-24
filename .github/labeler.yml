@@ -1,8 +1,2 @@
 zsh_related: "zsh/**"
 script_relate: "scripts/**"
-labels:
-  - label: "xsmall-diff"
-    size-below: 10
-  - label: "small-diff"
-    size-above: 9
-    size-below: 100
