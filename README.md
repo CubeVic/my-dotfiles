@@ -267,4 +267,4 @@ Provide some interaction for the cd command
 When developers perform a `git clone --depth 1` operation, the only thing they pull back from the remote repository is the latest commit on the specific git branch of interest.
 
 Change log
----- 1 
+---- 1
