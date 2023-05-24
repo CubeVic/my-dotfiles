@@ -1,6 +1,5 @@
-labels:
-  - label: "xsmall-diff"
+xsmall-diff: 
     size-below: 10
-  - label: "small-diff"
+small-diff:
     size-above: 9
     size-below: 100
