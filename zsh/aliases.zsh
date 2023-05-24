@@ -69,7 +69,7 @@ alias gsthpop="git stash pop"
 alias gsthl="git stash list"
 
 # Diff
-alias gd="git diff "
+alias gdiff="git diff "
 
 # --- Define program to handle extensions
 # YAML
