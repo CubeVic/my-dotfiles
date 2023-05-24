@@ -1,13 +1,13 @@
 version: 1
 appendOnly: true
 labels:
-- label: "S"
+- label: "small"
   size:
       below: 10
-- label: "M"
+- label: "medium"
   size:
       above: 9
       below: 100
-- label: "L"
+- label: "large"
   size:
       above: 100
