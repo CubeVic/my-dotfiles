@@ -11,7 +11,7 @@ on:
     branches: [ main ]
 
 jobs:
-  label:
+  label-module:
 
     runs-on: ubuntu-latest
     permissions:
@@ -22,5 +22,19 @@ jobs:
     - uses: actions/labeler@v4
       with:
         configuration-path: .github/labeler.yml
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+  label-size:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - uses: actions/labeler@v4
+      with:
+        configuration-path: .github/labeler_size.yml
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
