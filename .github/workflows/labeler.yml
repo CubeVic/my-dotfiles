@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 name: "Add Labels"
-=======
-name: "Pull Request Labeler"
->>>>>>> d8494ff (test actions)
 on:
   pull_request:
     branches: [ main ]
 
 jobs:
-<<<<<<< HEAD
   label_module_type:
     runs-on: ubuntu-latest
     steps:
@@ -25,16 +20,3 @@ jobs:
           config_path: .github/labeler_config_size.yml
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-=======
-  triage:
-    permissions:
-      contents: read
-      pull-requests: write
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/labeler@v4
-      with:
-        config_path: .github/labeler.yml
-      env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
->>>>>>> d8494ff (test actions)
