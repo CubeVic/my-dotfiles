@@ -113,3 +113,6 @@ typeset -U PATH
 # --------This most be at the end of the file ---------------------#
 # Configuration for zhs syntax highlighting
 source "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias copilot="gh copilot"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
