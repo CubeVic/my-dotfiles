@@ -7,11 +7,6 @@ alias usage="du -ah -c -I .git"
 alias topten="history | sort -rn | head -15"
 alias dir="dirs -v | head "
 
-# --- Exa ------------------
-# --- re-map ls to exa
-alias l="exa -l"
-alias ls="exa -l -a"
-alias ls-i="exa -l -a --icons"
 
 # --- Git ---------------
 # Functions
