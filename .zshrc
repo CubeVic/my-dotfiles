@@ -23,7 +23,6 @@ plugins=(
 	poetry
 	vscode
 	pip
-	adb
 	web-search
 	history
 	jsontools
