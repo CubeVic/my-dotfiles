@@ -66,6 +66,14 @@ alias gsthl="git stash list"
 # Diff
 alias gdiff="git diff "
 
+#copilot
+alias copilot="gh copilot"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+
+#appium
+alias appiumL='appium --allow-insecure chromedriver_autodownload --allow-cors' 
+
 # --- Define program to handle extensions
 # YAML
 alias -s {.ymal, .yml}=code

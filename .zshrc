@@ -33,7 +33,6 @@ plugins=(
 	zsh-syntax-highlighting
 )
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # --- ZSH running oh-my-zsh -----------------------
 source "$ZSH"/oh-my-zsh.sh
@@ -91,6 +90,7 @@ export PATH="$PATH":"$HOME"/.local/bin
 # --- Fuzzy finder
 # shellcheck source=$HOME/.zsh/
 [ -f ~/.zsh/.fzf.zsh ] && source ~/.zsh/.fzf.zsh
+alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
 
 # --- OP or 1Password command line -------------
 # Configuration for auto complete 1password
@@ -100,18 +100,37 @@ compdef _op op
 # --- Custom alias or scripts -------------------
 # source components
 for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
-	# shellcheck source=$HOME/.dotfiles/zsh/
 	source "${conf}"
 done
 unset conf
+
+# ---- Eza (better ls) -----
+
+alias ls="eza --icons=always"
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+alias cd="z"
 
 # --- Extras --------------------------------------
 # make sure the PATHs are unique
 typeset -U PATH
 
+
 # --------This most be at the end of the file ---------------------#
+
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
 # Configuration for zhs syntax highlighting
-source "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-alias copilot="gh copilot"
-alias gcs="gh copilot suggest"
-alias gce="gh copilot explain"
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
