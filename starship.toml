@@ -1,18 +1,26 @@
+# --- General Prompt Format ---
 format = '''
-[┌──────>](bold blue)$git_branch$git_status$git_commit$git_state$python$rust$ruby$nodejs$golang$package$memory_usage
-[│](bold blue)$directory$fill$battery$cmd_duration
-[└─>](bold blue)$username$character '''
+[┌──────>](bold purple)$git_branch$git_status$git_commit$git_state$python$golang$ruby$nodejs$package$memory_usage
+[│](bold purple)$directory$fill$battery$cmd_duration
+[└─>](bold purple)$username$character '''
 
+# --- Character ---
+[character]
+format = '$symbol '
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](bold green)'
 
+# --- AWS ---
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
+# --- Battery ---
 [battery]
 format = '[$symbol$percentage]($style) '
 full_symbol = '🦾 '
 charging_symbol = '⚡️ '
 discharging_symbol = '💦 '
-disabled = false
 
 [[battery.display]]
 threshold = 10
@@ -34,127 +42,79 @@ threshold = 100
 style = 'bold green'
 charging_symbol = '⚡️ '
 
-[bun]
-format = '\[[$symbol($version)]($style)\]'
-
-[c]
-format = '\[[$symbol($version(-$name))]($style)\]'
-
-[character]
-format = '$symbol '
-success_symbol = '[❯](bold green)'
-error_symbol = '[❯](bold red)'
-vimcmd_symbol = '[❮](bold green)'
-
-[cmd_duration]
-format = '\[[⏱ $duration]($style)\]'
-
-[conda]
-format = '\[[$symbol$environment]($style)\]'
-
-[dart]
-format = '\[[$symbol($version)]($style)\]'
-
-[docker_context]
-format = '\[[$symbol$context]($style)\]'
-symbol = '🐳 '
-
-[directory]
-style = 'bright black'
-
-[fill]
-symbol = '  '
-
-[fossil_branch]
-format = '\[[$symbol$branch]($style)\]'
-
-[gcloud]
-format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
-
-[git_branch]
-format = '\[[$symbol$branch]($style)\]'
-style = 'purple'
-
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style))'
-
-[golang]
-format = '\[[$symbol($version)]($style)\]'
-
-[gradle]
-format = '\[[$symbol($version)]($style)\]'
-
-[guix_shell]
-format = '\[[$symbol]($style)\]'
-
-[java]
-format = '\[[$symbol($version)]($style)\]'
-
-[kotlin]
-format = '\[[$symbol($version)]($style)\]'
-
-[kubernetes]
-format = '\[[$symbol$context( \($namespace\))]($style)\]'
-
-[lua]
-format = '\[[$symbol($version)]($style)\]'
-
-[memory_usage]
-format = '\[$symbol[$ram( | $swap)]($style)\]'
-
-[meson]
-format = '\[[$symbol$project]($style)\]'
-
-[nim]
-format = '\[[$symbol($version)]($style)\]'
-
-[nodejs]
-format = '\[[$symbol($version)]($style)\]'
-
-[openstack]
-format = '\[[$symbol$cloud(\($project\))]($style)\]'
-
-[os]
-format = '\[[$symbol]($style)\]'
-
-[package]
-format = '\[[$symbol$version]($style)\]'
-
-[perl]
-format = '\[[$symbol($version)]($style)\]'
-
+# --- Programming Languages ---
 [python]
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 style = 'green bold'
 
+[golang]
+format = '\[[$symbol($version)]($style)\]'
+style = 'blue bold'
+
+[lua]
+format = '\[[$symbol($version)]($style)\]'
+style = 'cyan bold'
+
 [ruby]
 format = '\[[$symbol($version)]($style)\]'
+style = 'red bold'
 
-[rust]
+[nodejs]
 format = '\[[$symbol($version)]($style)\]'
+style = 'green bold'
 
-[sudo]
-format = '\[[as $symbol]\]'
+# --- Git Configuration ---
+[git_branch]
+# Git branch displayed in purple
+format = '\[[$symbol$branch]($style)\]'
+style = 'purple'
 
-[swift]
-format = '\[[$symbol($version)]($style)\]'
+[git_status]
+# Git status (modified, staged, etc.) displayed with additional info like ahead/behind
+modified = "!${count}"
+untracked = "?${count}"
+format = '([\[$all_status$ahead_behind\]]($style))'
 
-[terraform]
-format = '\[[$symbol$workspace]($style)\]'
+[git_commit]
+# Display the latest git commit hash (optional for added context)
+format = ' \[$symbol$commit_hash]($style)'
 
-[time]
-format = '\[[$time]($style)\]'
+[git_state]
+# Indicates the git state like 'untracked files', 'rebase', etc.
+format = ' \[$symbol$state]($style)'
 
+# --- Docker ---
+[docker_context]
+format = '\[[$symbol$context]($style)\]'
+symbol = '🐳 '
+
+# --- Command Duration ---
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
+style = 'bold green'
+
+# --- Directory ---
+[directory]
+style = 'bright black'
+
+# --- Memory Usage ---
+[memory_usage]
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+# --- Username ---
 [username]
 format = '\[[$user]($style)\]'
 show_always = true
 style_user = 'bold white'
 
-[vagrant]
-format = '\[[$symbol($version)]($style)\]'
+# --- Kubernetes ---
+[kubernetes]
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
 
-[vlang]
-format = '\[[$symbol($version)]($style)\]'
-
-[zig]
-format = '\[[$symbol($version)]($style)\]'
+# --- Additional Utilities ---
+[os]
+format = '\[[$symbol]($style)\]'
+[time]
+format = '\[[$time]($style)\]'
+[package]
+format = '\[[$symbol$version]($style)\]'

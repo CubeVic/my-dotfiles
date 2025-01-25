@@ -1,72 +1,216 @@
 tap "1password/tap"
 tap "benwebber/tunnelblickctl"
+tap "danvergara/tools"
+tap "derailed/k9s"
 tap "facebook/fb"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "lyft/formulae"
+tap "tako8ki/tap"
 tap "wix/brew"
-# General-purpose data compression with high compression ratio
-brew "xz"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
 # Decentralized dependency manager for Cocoa
 brew "carthage"
 # Cross-platform make
 brew "cmake"
-# Modern replacement for 'ls'
-brew "exa"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
+# Modern, maintained replacement for ls
+brew "eza"
+# Reliable Internet Stream Transport (RIST)
+brew "librist"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
-# Library for command-line editing
-brew "readline"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
+# Interactive computing in Python
+brew "ipython"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Platform built on V8 to build network applications
 brew "node"
-# Command-line interface for SQLite
-brew "sqlite"
 # Open source computer vision library
 brew "opencv"
 # Development kit for the Java programming language
 brew "openjdk"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Display and control your Android device
 brew "scrcpy"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Terminal multiplexer
+brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Internet file retriever
 brew "wget"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
 # Command-line interface for Tunnelblick
 brew "benwebber/tunnelblickctl/tunnelblickctl"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "derailed/k9s/k9s"
 # A Powerful Command Line for automating iOS Simulators
 brew "facebook/fb/idb-companion"
 brew "lyft/formulae/set-simulator-location"
 # Apple simulator utilities
 brew "wix/brew/applesimutils"
-# Command-line helper for the 1Password password manager
+# Command-line interface for 1Password
 cask "1password-cli"
-# Automated testing of webapps for Google Chrome
-cask "chromedriver"
-# Collaboration platform for API development
-cask "postman"
-# Text editor for code, markup and prose
-cask "sublime-text"
-# Virtualizer for x86 hardware
-cask "virtualbox"
+cask "font-0xproto-nerd-font"
+cask "font-3270-nerd-font"
+cask "font-agave-nerd-font"
+cask "font-anonymice-nerd-font"
+cask "font-arimo-nerd-font"
+cask "font-aurulent-sans-mono-nerd-font"
+cask "font-bigblue-terminal-nerd-font"
+cask "font-bitstream-vera-sans-mono-nerd-font"
+cask "font-blex-mono-nerd-font"
+cask "font-caskaydia-cove-nerd-font"
+cask "font-caskaydia-mono-nerd-font"
+cask "font-code-new-roman-nerd-font"
+cask "font-comic-shanns-mono-nerd-font"
+cask "font-commit-mono-nerd-font"
+cask "font-cousine-nerd-font"
+cask "font-d2coding-nerd-font"
+cask "font-daddy-time-mono-nerd-font"
+cask "font-dejavu-sans-mono-nerd-font"
+cask "font-droid-sans-mono-nerd-font"
+cask "font-envy-code-r-nerd-font"
+cask "font-fantasque-sans-mono-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-geist-mono-nerd-font"
+cask "font-go-mono-nerd-font"
+cask "font-gohufont-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-hasklug-nerd-font"
+cask "font-heavy-data-nerd-font"
+cask "font-hurmit-nerd-font"
+cask "font-im-writing-nerd-font"
+cask "font-inconsolata-go-nerd-font"
+cask "font-inconsolata-lgc-nerd-font"
+cask "font-inconsolata-nerd-font"
+cask "font-intone-mono-nerd-font"
+cask "font-iosevka-nerd-font"
+cask "font-iosevka-term-nerd-font"
+cask "font-iosevka-term-slab-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-lekton-nerd-font"
+cask "font-liberation-nerd-font"
+cask "font-lilex-nerd-font"
+cask "font-m+-nerd-font"
+cask "font-martian-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "font-monaspace-nerd-font"
+cask "font-monocraft-nerd-font"
+cask "font-monofur-nerd-font"
+cask "font-monoid-nerd-font"
+cask "font-mononoki-nerd-font"
+cask "font-noto-nerd-font"
+cask "font-open-dyslexic-nerd-font"
+cask "font-overpass-nerd-font"
+cask "font-profont-nerd-font"
+cask "font-proggy-clean-tt-nerd-font"
+cask "font-recursive-mono-nerd-font"
+cask "font-roboto-mono-nerd-font"
+cask "font-sauce-code-pro-nerd-font"
+cask "font-shure-tech-mono-nerd-font"
+cask "font-space-mono-nerd-font"
+cask "font-symbols-only-nerd-font"
+cask "font-terminess-ttf-nerd-font"
+cask "font-tinos-nerd-font"
+cask "font-ubuntu-mono-nerd-font"
+cask "font-ubuntu-nerd-font"
+cask "font-ubuntu-sans-nerd-font"
+cask "font-victor-mono-nerd-font"
+cask "font-zed-mono-nerd-font"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
+vscode "aaron-bond.better-comments"
+vscode "alefragnani.bookmarks"
+vscode "alexcvzz.vscode-sqlite"
+vscode "bmuskalla.vscode-tldr"
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+vscode "cstrap.flask-snippets"
+vscode "cweijan.dbclient-jdbc"
+vscode "cweijan.vscode-database-client2"
+vscode "davidanson.vscode-markdownlint"
+vscode "donjayamanne.githistory"
+vscode "dotjoshjohnson.xml"
+vscode "eamodio.gitlens"
+vscode "elagil.pre-commit-helper"
+vscode "esbenp.prettier-vscode"
+vscode "formulahendry.auto-rename-tag"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-codeql"
+vscode "github.vscode-github-actions"
+vscode "github.vscode-pull-request-github"
+vscode "golang.go"
+vscode "gruntfuggly.todo-tree"
+vscode "jeff-hykin.better-dockerfile-syntax"
+vscode "johnpapa.vscode-cloak"
+vscode "mechatroner.rainbow-csv"
+vscode "mermaidchart.vscode-mermaid-chart"
+vscode "mhutchie.git-graph"
+vscode "mikestead.dotenv"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+vscode "ms-python.debugpy"
+vscode "ms-python.flake8"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode-remote.remote-wsl"
+vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.remote-server"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "p1c2u.docker-compose"
+vscode "patbenatar.advanced-new-file"
+vscode "pranaygp.vscode-css-peek"
+vscode "redhat.ansible"
+vscode "redhat.vscode-yaml"
+vscode "samuelcastillo.batman-dark-theme"
+vscode "tamasfe.even-better-toml"
+vscode "thedavej.night-owl-black"
+vscode "usernamehw.errorlens"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscodevim.vim"
+vscode "wholroyd.jinja"
+vscode "yzhang.markdown-all-in-one"
