@@ -7,86 +7,53 @@ tap "homebrew/bundle"
 tap "lyft/formulae"
 tap "tako8ki/tap"
 tap "wix/brew"
-# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
-# Decentralized dependency manager for Cocoa
 brew "carthage"
-# Cross-platform make
 brew "cmake"
-# Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
-# Modern, maintained replacement for ls
 brew "eza"
-# Reliable Internet Stream Transport (RIST)
+brew "fd"
 brew "librist"
-# Play, record, convert, and stream audio and video
 brew "ffmpeg"
-# Command-line fuzzy finder written in Go
 brew "fzf"
-# GitHub command-line tool
 brew "gh"
-# Distributed revision control system
 brew "git"
-# GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
-# Install and debug iPhone apps from the command-line
+brew "imagemagick"
 brew "ios-deploy"
-# Interactive computing in Python
 brew "ipython"
-# Simple terminal UI for git commands
+brew "jq"
 brew "lazygit"
-# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Platform built on V8 to build network applications
 brew "node"
-# Open source computer vision library
 brew "opencv"
-# Development kit for the Java programming language
 brew "openjdk"
-# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
-# Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Framework for managing multi-language pre-commit hooks
+brew "poppler"
 brew "pre-commit"
-# Python version management
 brew "pyenv"
-# Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
-# Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Display and control your Android device
 brew "scrcpy"
-# Cross-shell prompt for astronauts
+brew "sevenzip"
 brew "starship"
-# Terminal multiplexer
+brew "tldr"
 brew "tmux"
-# Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Internet file retriever
 brew "wget"
-# General-purpose lossless data-compression library
+brew "yazi"
 brew "zlib"
-# Shell extension to navigate your filesystem faster
 brew "zoxide"
-# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# Command-line interface for Tunnelblick
 brew "benwebber/tunnelblickctl/tunnelblickctl"
-# Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
-# A Powerful Command Line for automating iOS Simulators
 brew "facebook/fb/idb-companion"
 brew "lyft/formulae/set-simulator-location"
-# Apple simulator utilities
 brew "wix/brew/applesimutils"
-# Command-line interface for 1Password
 cask "1password-cli"
 cask "font-0xproto-nerd-font"
 cask "font-3270-nerd-font"
@@ -156,13 +123,14 @@ cask "font-ubuntu-nerd-font"
 cask "font-ubuntu-sans-nerd-font"
 cask "font-victor-mono-nerd-font"
 cask "font-zed-mono-nerd-font"
-# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "visual-studio-code"
 cask "wezterm"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
 vscode "alexcvzz.vscode-sqlite"
 vscode "bmuskalla.vscode-tldr"
 vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+vscode "charliermarsh.ruff"
 vscode "cstrap.flask-snippets"
 vscode "cweijan.dbclient-jdbc"
 vscode "cweijan.vscode-database-client2"
