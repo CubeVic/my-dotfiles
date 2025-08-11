@@ -68,7 +68,7 @@ alias gcs="gh copilot suggest"
 alias gce="gh copilot explain"
 
 #appium
-alias appiumL='appium --allow-insecure chromedriver_autodownload --allow-cors' 
+alias appiumL='appium --allow-insecure chromedriver_autodownload --allow-cors'
 
 # --- Define program to handle extensions
 # YAML
