@@ -46,7 +46,7 @@ export GPG_TTY=$(tty)
 
 # --- APPIUM -------------------------------------------
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home
 export PATH=$JAVA_HOME:"$PATH"
 export ANDROID_HOME="$HOME"/Library/Android/sdk
 export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME"/platform-tools

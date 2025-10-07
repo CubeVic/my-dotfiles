@@ -63,7 +63,6 @@ alias gsthl="git stash list"
 alias gdiff="git diff"
 
 #copilot
-alias copilot="gh copilot"
 alias gcs="gh copilot suggest"
 alias gce="gh copilot explain"
 
