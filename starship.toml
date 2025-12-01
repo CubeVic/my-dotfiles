@@ -77,11 +77,11 @@ format = '([\[$all_status$ahead_behind\]]($style))'
 
 [git_commit]
 # Display the latest git commit hash (optional for added context)
-format = ' \[$symbol$commit_hash]($style)'
+format = ' [$symbol$commit_hash]($style)'
 
 [git_state]
 # Indicates the git state like 'untracked files', 'rebase', etc.
-format = ' \[$symbol$state]($style)'
+format = ' [$symbol$state]($style)'
 
 # --- Docker ---
 [docker_context]

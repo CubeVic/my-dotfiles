@@ -46,7 +46,7 @@ export GPG_TTY=$(tty)
 
 # --- APPIUM -------------------------------------------
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home"
 export PATH=$JAVA_HOME:"$PATH"
 export ANDROID_HOME="$HOME"/Library/Android/sdk
 export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME"/platform-tools
@@ -87,6 +87,8 @@ alias cd="z"
 # make sure the PATHs are unique
 typeset -U PATH
 
+#--------- K9S ----------------------------------------------------#
+export KUBECONFIG=$PWD/sporty-pub-prod-codebuild.yaml
 # --------This most be at the end of the file ---------------------#
 
 # history setup
