@@ -4,7 +4,7 @@ alias c="clear"
 alias ..="cd .."
 alias ...="cd ../.."
 alias usage="du -ah -c --exclude=.git"
-alias topten="history | sort -rn | head -15"
+alias topten="history | sort -rn | head -10"
 alias dir="dirs -v | head"
 
 # --- Git ---------------
@@ -70,7 +70,7 @@ alias gce="gh copilot explain"
 alias appiumL='appium --allow-insecure chromedriver_autodownload --allow-cors'
 
 # --- Define program to handle extensions
-# YAML
-alias -s {.ymal, .yml}=code
+# YAML files open in VS Code
+alias -s {.yaml,.yml}=code
 
 #---------------------------------------------

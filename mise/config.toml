@@ -1,0 +1,40 @@
+# =============================================================================
+# Mise Configuration - Tool Version Management
+# =============================================================================
+# Docs: https://mise.jdx.dev/
+# Symlink: ln -sf ~/.dotfiles/mise/config.toml ~/.config/mise/config.toml
+# =============================================================================
+
+[settings]
+experimental = true
+legacy_version_file = true
+always_keep_install = true
+
+[tools]
+# java = "21"  # Temporarily disabled - using system Java until mise is updated
+# ruby = "latest"  # Commented out - install later with: mise install ruby@latest
+
+[env]
+# =============================================================================
+# JAVA CONFIGURATION (Required for Appium)
+# =============================================================================
+# Using system Java until mise is updated. Re-enable with:
+#   mise install java@21
+#   Then change back to: _.java.JAVA_HOME = "{{env.MISE_JAVA_HOME}}"
+JAVA_HOME = "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"
+
+# =============================================================================
+# ANDROID SDK CONFIGURATION (Required for Appium)
+# =============================================================================
+# Core Android environment variable - most tools derive paths from this
+ANDROID_HOME = "{{env.HOME}}/Library/Android/sdk"
+
+# Derived paths - some tools expect these as environment variables
+ANDROID_PLATFORM_TOOLS = "{{env.ANDROID_HOME}}/platform-tools"
+ANDROID_EMULATOR = "{{env.ANDROID_HOME}}/emulator"
+ANDROID_TOOLS = "{{env.ANDROID_HOME}}/tools"
+ANDROID_TOOLS_BIN = "{{env.ANDROID_HOME}}/tools/bin"
+ANDROID_CMDLINE_TOOLS = "{{env.ANDROID_HOME}}/cmdline-tools/latest/bin"
+
+# Optional: bundletool for building APKs from AABs
+BUNDLETOOL_PATH = "{{env.ANDROID_HOME}}/tools/bundletool.jar"

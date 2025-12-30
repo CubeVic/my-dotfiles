@@ -4,22 +4,17 @@ export ZSH="$HOME/.oh-my-zsh"
 # --- ZSH Themes ---
 ZSH_THEME="robbyrussell"
 
-# --- Plugins ---
+# --- Plugins (reduced from 13 to 8 for faster startup) ---
+# Removed: colorize, ruby, poetry, web-search, git-auto-fetch, zsh-interactive-cd
 plugins=(
-  colorize
-  dotenv
-  ruby
-  poetry
-  vscode
-  pip
-  web-search
-  history
-  jsontools
-  git-auto-fetch
-  macos
-  zsh-autosuggestions
-  zsh-interactive-cd
-  zsh-syntax-highlighting
+  dotenv              # Load .env files automatically
+  vscode              # VS Code CLI shortcuts
+  pip                 # Python pip completions
+  history             # History search aliases
+  jsontools           # JSON manipulation (pp_json, etc.)
+  macos               # macOS utilities (ofd, cdf, etc.)
+  zsh-autosuggestions # Command suggestions
+  zsh-syntax-highlighting # Must be last
 )
 
 # Load Oh-My-Zsh
@@ -44,28 +39,17 @@ eval "$(starship init zsh)"
 # --- GPG Keys ---
 export GPG_TTY=$(tty)
 
-# --- APPIUM -------------------------------------------
-
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home"
-export PATH=$JAVA_HOME:"$PATH"
-export ANDROID_HOME="$HOME"/Library/Android/sdk
-export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME"/platform-tools
-export ANDROID_EMULATOR="$ANDROID_HOME"/emulator
-export ANDROID_TOOLS="$ANDROID_HOME"/tools
-export ANDROID_TOOLS_BIN="$ANDROID_TOOLS"/bin
-export PATH="$PATH:$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_EMULATOR:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN"
-
-# --- PIPX ---
-# Added by pipx
-export PATH="$HOME/.local/bin:$PATH"
-
 # --- Fuzzy Finder ---
-[ -f ~/.zsh/.fzf.zsh ] && source ~/.zsh/.fzf.zsh
+[ -f ~/.dotfiles/zsh/.fzf.zsh ] && source ~/.dotfiles/zsh/.fzf.zsh
 alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
 
-# --- 1Password CLI ---
-eval "$(op completion zsh)"
-compdef _op op
+# --- 1Password CLI (lazy loaded for faster startup) ---
+op() {
+  unfunction op
+  eval "$(command op completion zsh)"
+  compdef _op op
+  command op "$@"
+}
 
 # --- Custom Scripts ---
 if [ -d "$HOME/.dotfiles/zsh" ] && compgen -G "$HOME/.dotfiles/zsh/*.zsh" > /dev/null; then
@@ -82,6 +66,19 @@ alias ls="eza --icons=always"
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+# --- Mise (Tool Version Manager) ---
+# Manages: Java, Ruby | Sets: JAVA_HOME, ANDROID_HOME, etc.
+if [[ -f "$HOME/.local/bin/mise" ]]; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi
+
+# --- Android SDK PATH (after mise sets ANDROID_HOME) ---
+if [[ -n "$ANDROID_HOME" && -d "$ANDROID_HOME" ]]; then
+  export PATH="$PATH:$ANDROID_HOME/platform-tools"
+  export PATH="$PATH:$ANDROID_HOME/emulator"
+  export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+fi
 
 # --- Extras --------------------------------------
 # make sure the PATHs are unique
@@ -112,6 +109,3 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 } # start yazi with y and close with q
-# Configuration for zhs syntax highlighting
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
