@@ -87,3 +87,109 @@ echo ""
 echo "=== XCUITest Doctor ==="
 appium driver doctor xcuitest || true
 '''
+
+# =============================================================================
+# iOS TASKS
+# =============================================================================
+
+[tasks.ios-list]
+description = "List available iOS simulators"
+run = '''
+echo "=== iOS Simulators ==="
+xcrun simctl list devices
+'''
+
+[tasks.ios-runtimes]
+description = "List installed iOS runtimes"
+run = '''
+echo "=== Installed Runtimes ==="
+xcrun simctl list runtimes
+'''
+
+[tasks.ios-boot]
+description = "Boot an iOS simulator"
+usage = 'arg "<device>" help="Device name or UUID"'
+run = '''
+if [[ -z "${usage_device:-}" ]]; then
+  echo "Usage: mise run ios-boot <device>"
+  echo ""
+  echo "Available devices:"
+  xcrun simctl list devices available | grep -E "iPhone|iPad"
+  exit 1
+fi
+echo "Booting $usage_device..."
+xcrun simctl boot "$usage_device" 2>/dev/null || echo "Already booted or not found"
+open -a Simulator
+'''
+
+[tasks.ios-shutdown]
+description = "Shutdown all iOS simulators"
+run = '''
+echo "Shutting down all simulators..."
+xcrun simctl shutdown all
+echo "✓ Done"
+'''
+
+[tasks.ios-open]
+description = "Open Simulator app"
+run = "open -a Simulator"
+
+[tasks.ios-install]
+description = "Install app on booted simulator"
+usage = 'arg "<app>" help="Path to .app file"'
+run = '''
+if [[ -z "${usage_app:-}" ]]; then
+  echo "Usage: mise run ios-install <app>"
+  exit 1
+fi
+echo "Installing $usage_app..."
+xcrun simctl install booted "$usage_app"
+echo "✓ Installed"
+'''
+
+[tasks.ios-check]
+description = "Check iOS development environment"
+run = '''
+echo "=== iOS Development Environment ==="
+echo ""
+echo "Xcode:"
+xcode-select -p
+xcodebuild -version | head -2
+echo ""
+echo "Simulators:"
+xcrun simctl list devices booted 2>/dev/null | grep -E "iPhone|iPad" || echo "No simulators running"
+echo ""
+echo "Appium XCUITest:"
+appium driver list --installed 2>&1 | grep -i xcuitest || echo "xcuitest not installed"
+'''
+
+# =============================================================================
+# ANDROID TASKS
+# =============================================================================
+
+[tasks.android-list]
+description = "List Android emulators"
+run = "emulator -list-avds"
+
+[tasks.android-boot]
+description = "Boot Android emulator"
+usage = 'arg "<avd>" help="AVD name"'
+run = '''
+if [[ -z "${usage_avd:-}" ]]; then
+  echo "Usage: mise run android-boot <avd>"
+  echo ""
+  echo "Available AVDs:"
+  emulator -list-avds
+  exit 1
+fi
+echo "Starting $usage_avd..."
+emulator -avd "$usage_avd" &
+'''
+
+# =============================================================================
+# APPIUM TASKS
+# =============================================================================
+
+[tasks.appium-start]
+description = "Start Appium server"
+run = "appium --allow-insecure chromedriver_autodownload --allow-cors"
