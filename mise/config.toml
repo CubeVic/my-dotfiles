@@ -11,17 +11,15 @@ legacy_version_file = true
 always_keep_install = true
 
 [tools]
-# java = "21"  # Temporarily disabled - using system Java until mise is updated
-# ruby = "latest"  # Commented out - install later with: mise install ruby@latest
+java = "21"
+# ruby = "latest"  # Optional - install with: mise install ruby@latest
 
 [env]
 # =============================================================================
 # JAVA CONFIGURATION (Required for Appium)
 # =============================================================================
-# Using system Java until mise is updated. Re-enable with:
-#   mise install java@21
-#   Then change back to: _.java.JAVA_HOME = "{{env.MISE_JAVA_HOME}}"
-JAVA_HOME = "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"
+# Set JAVA_HOME to mise-managed Java installation
+JAVA_HOME = "{{env.HOME}}/.local/share/mise/installs/java/21.0.2"
 
 # =============================================================================
 # ANDROID SDK CONFIGURATION (Required for Appium)
@@ -38,3 +36,54 @@ ANDROID_CMDLINE_TOOLS = "{{env.ANDROID_HOME}}/cmdline-tools/latest/bin"
 
 # Optional: bundletool for building APKs from AABs
 BUNDLETOOL_PATH = "{{env.ANDROID_HOME}}/tools/bundletool.jar"
+
+# =============================================================================
+# TASKS
+# =============================================================================
+
+[tasks.check]
+description = "Validate setup"
+run = '''
+echo "=== Tool Versions ==="
+echo "Java:   $(java -version 2>&1 | head -1)"
+echo "Mise:   $(mise --version)"
+echo ""
+echo "=== Environment ==="
+echo "JAVA_HOME:    $JAVA_HOME"
+echo "ANDROID_HOME: $ANDROID_HOME"
+'''
+
+[tasks.check-env]
+description = "Check critical environment variables"
+run = '''
+echo "=== Environment Variables ==="
+echo "JAVA_HOME:     ${JAVA_HOME:-NOT SET}"
+echo "ANDROID_HOME:  ${ANDROID_HOME:-NOT SET}"
+if [[ -n "$JAVA_HOME" ]]; then echo "✓ JAVA_HOME is set"; else echo "✗ JAVA_HOME missing"; fi
+if [[ -n "$ANDROID_HOME" && -d "$ANDROID_HOME" ]]; then echo "✓ ANDROID_HOME exists"; else echo "✗ ANDROID_HOME missing"; fi
+'''
+
+[tasks.mobile-check]
+description = "Full mobile development check"
+run = '''
+echo "=== Mobile Development Environment ==="
+echo ""
+echo "JAVA_HOME: $JAVA_HOME"
+java -version 2>&1 | head -1
+echo ""
+echo "ANDROID_HOME: $ANDROID_HOME"
+which adb 2>/dev/null && adb --version | head -1 || echo "adb not found"
+echo ""
+echo "Appium:"
+appium --version 2>/dev/null || echo "appium not installed"
+'''
+
+[tasks.appium-doctor]
+description = "Run Appium driver doctors"
+run = '''
+echo "=== UIAutomator2 Doctor ==="
+appium driver doctor uiautomator2 || true
+echo ""
+echo "=== XCUITest Doctor ==="
+appium driver doctor xcuitest || true
+'''
