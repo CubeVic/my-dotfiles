@@ -18,8 +18,8 @@ java = "21"
 # =============================================================================
 # JAVA CONFIGURATION (Required for Appium)
 # =============================================================================
-# Set JAVA_HOME to mise-managed Java installation
-JAVA_HOME = "{{env.HOME}}/.local/share/mise/installs/java/21.0.2"
+# JAVA_HOME is set dynamically in .zshrc after mise activation
+# This avoids hardcoding version numbers that break on updates
 
 # =============================================================================
 # ANDROID SDK CONFIGURATION (Required for Appium)

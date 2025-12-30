@@ -41,7 +41,7 @@ export GPG_TTY=$(tty)
 
 # --- Fuzzy Finder ---
 [ -f ~/.dotfiles/zsh/.fzf.zsh ] && source ~/.dotfiles/zsh/.fzf.zsh
-alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
+alias fzfp="fzf --preview 'bat --style=numbers --color=always {}'"  # fzf with bat preview
 
 # --- 1Password CLI (lazy loaded for faster startup) ---
 op() {
@@ -67,17 +67,25 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 
+# ---- Pokemon-Terminal (terminal backgrounds) ----
+alias pokemon='KITTY_RC_PASSWORD=pokemon pokemon'
+
 # --- Mise (Tool Version Manager) ---
-# Manages: Java, Ruby | Sets: JAVA_HOME, ANDROID_HOME, etc.
+# Manages: Java, Ruby | Sets: ANDROID_HOME, etc.
 if [[ -f "$HOME/.local/bin/mise" ]]; then
-  eval "$($HOME/.local/bin/mise activate zsh)"
+  eval "$($HOME/.local/bin/mise activate zsh)" || echo "Warning: mise activation failed" >&2
+  # Set JAVA_HOME dynamically (avoids hardcoding version in mise config)
+  if command -v mise >/dev/null 2>&1; then
+    export JAVA_HOME="$(mise where java 2>/dev/null || echo '')"
+  fi
 fi
 
 # --- Android SDK PATH (after mise sets ANDROID_HOME) ---
+# Prepending ensures Android tools take precedence
 if [[ -n "$ANDROID_HOME" && -d "$ANDROID_HOME" ]]; then
-  export PATH="$PATH:$ANDROID_HOME/platform-tools"
-  export PATH="$PATH:$ANDROID_HOME/emulator"
-  export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+  export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+  export PATH="$ANDROID_HOME/emulator:$PATH"
+  export PATH="$ANDROID_HOME/platform-tools:$PATH"
 fi
 
 # --- Extras --------------------------------------
@@ -90,8 +98,8 @@ export KUBECONFIG=$PWD/sporty-pub-prod-codebuild.yaml
 
 # history setup
 HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
+HISTSIZE=10000
+SAVEHIST=10000
 setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
