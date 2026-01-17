@@ -86,6 +86,12 @@ link_file "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 link_file "$DOTFILES_DIR/vim/.vimrc.plug" "$HOME/.vimrc.plug"
 
 # =============================================================================
+# Kitty Terminal
+# =============================================================================
+info "Setting up Kitty terminal configuration..."
+link_file "$DOTFILES_DIR/kitty" "$HOME/.config/kitty"
+
+# =============================================================================
 # Summary
 # =============================================================================
 echo ""
