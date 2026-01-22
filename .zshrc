@@ -71,13 +71,9 @@ alias cd="z"
 alias pokemon='KITTY_RC_PASSWORD=pokemon pokemon'
 
 # --- Mise (Tool Version Manager) ---
-# Manages: Java, Ruby | Sets: ANDROID_HOME, etc.
-if [[ -f "$HOME/.local/bin/mise" ]]; then
-  eval "$($HOME/.local/bin/mise activate zsh)" || echo "Warning: mise activation failed" >&2
-  # Set JAVA_HOME dynamically (avoids hardcoding version in mise config)
-  if command -v mise >/dev/null 2>&1; then
-    export JAVA_HOME="$(mise where java 2>/dev/null || echo '')"
-  fi
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)" || echo "Warning: mise activation failed" >&2
+  export JAVA_HOME="$(mise where java 2>/dev/null || echo '')"
 fi
 
 # --- Android SDK PATH (after mise sets ANDROID_HOME) ---
@@ -105,8 +101,8 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 # completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+bindkey "${terminfo[kcuu1]}" history-search-backward
+bindkey "${terminfo[kcud1]}" history-search-forward
 
 # --- yazi conf ----
 function y() {
@@ -117,3 +113,4 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 } # start yazi with y and close with q
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
