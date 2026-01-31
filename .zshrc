@@ -67,9 +67,6 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-# ---- Pokemon-Terminal (terminal backgrounds) ----
-alias pokemon='KITTY_RC_PASSWORD=pokemon pokemon'
-
 # --- Mise (Tool Version Manager) ---
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)" || echo "Warning: mise activation failed" >&2
