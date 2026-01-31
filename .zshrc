@@ -114,3 +114,9 @@ function y() {
 	rm -f -- "$tmp"
 } # start yazi with y and close with q
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+source ~/.testrail_env 2>/dev/null
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=($HOME/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
