@@ -119,7 +119,7 @@ if [[ "$LINKS_ONLY" == false ]]; then
             echo "  [DRY-RUN] Would run: brew bundle --file=$DOTFILES_DIR/brew/Brewfile"
         else
             info "Installing packages from Brewfile..."
-            brew bundle --file="$DOTFILES_DIR/brew/Brewfile" --no-lock
+            brew bundle --file="$DOTFILES_DIR/brew/Brewfile"
         fi
     else
         warn "Brewfile not found, skipping package installation"
