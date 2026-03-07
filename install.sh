@@ -148,7 +148,30 @@ if [[ "$LINKS_ONLY" == false ]]; then
 fi
 
 # =============================================================================
-# Step 4: Create Symlinks
+# Step 4: GPG Configuration (pinentry-mac for Kitty/terminal compatibility)
+# =============================================================================
+step "GPG Setup"
+
+if has_command pinentry-mac; then
+    GPG_AGENT_CONF="$HOME/.gnupg/gpg-agent.conf"
+    PINENTRY_LINE="pinentry-program $(which pinentry-mac)"
+
+    if [[ "$DRY_RUN" == true ]]; then
+        echo "  [DRY-RUN] Would configure pinentry-mac in $GPG_AGENT_CONF"
+    elif [[ -f "$GPG_AGENT_CONF" ]] && grep -q "pinentry-program" "$GPG_AGENT_CONF"; then
+        info "pinentry already configured in gpg-agent.conf"
+    else
+        mkdir -p "$HOME/.gnupg"
+        echo "$PINENTRY_LINE" >> "$GPG_AGENT_CONF"
+        gpgconf --kill gpg-agent 2>/dev/null || true
+        info "Configured pinentry-mac for GPG signing"
+    fi
+else
+    warn "pinentry-mac not found, skipping GPG setup (install via: brew install pinentry-mac)"
+fi
+
+# =============================================================================
+# Step 5: Create Symlinks
 # =============================================================================
 step "Symlinks"
 
@@ -170,7 +193,7 @@ link_file "$DOTFILES_DIR/vim/.vimrc.plug" "$HOME/.vimrc.plug"
 link_file "$DOTFILES_DIR/kitty" "$HOME/.config/kitty"
 
 # =============================================================================
-# Step 5: Install Mise Tools
+# Step 6: Install Mise Tools
 # =============================================================================
 if [[ "$LINKS_ONLY" == false ]]; then
     step "Mise Tools"
