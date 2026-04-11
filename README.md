@@ -14,76 +14,26 @@ It is a mixture of the files use in my work mac and my personal mac, mostly rela
 
 ## Plugins
 
+> Optimized from 16 to 8 plugins for faster shell startup
+
 ```shell
-...
 plugins=(
-    colorize
-    dotenv
-    ruby
-    emoji
-    poetry
-    vscode
-    pip
-    adb
-    web-search
-    history
-    jsontools
-    git-auto-fetch
-    macos
-    zsh-autosuggestions
-    zsh-interactive-cd
-    zsh-syntax-highlighting
+  dotenv              # Load .env files automatically
+  vscode              # VS Code CLI shortcuts
+  pip                 # Python pip completions
+  history             # History search aliases
+  jsontools           # JSON manipulation (pp_json, etc.)
+  macos               # macOS utilities (ofd, cdf, etc.)
+  zsh-autosuggestions # Command suggestions
+  zsh-syntax-highlighting # Must be last
 )
-...
 ```
-
-### colorize
-
-:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize>
-
-"With this plugin you can syntax-highlight file contents of over 300 supported languages and other text formats." -repo README.md
 
 ### dotenv
 
 :house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv>
 
 "Automatically load your project ENV variables from .env file when you cd into project root directory."-repo README.md
-
-### ruby
-
-:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ruby>
-
-"This plugin adds aliases for common commands used in dealing with Ruby and gem packages." -repo README.md
-
-#### Aliases
-
-| Alias   | Command                                | Description                                          |
-| ------- | -------------------------------------- | ---------------------------------------------------- |
-| rb      | `ruby`                                 | The Ruby command                                     |
-| sgem    | `sudo gem`                             | Run sudo gem on the system ruby, not the active ruby |
-| rfind   | `find . -name "*.rb" \| xargs grep -n` | Find ruby file                                       |
-| rrun    | `ruby -e`                              | Execute some code: E.g: `rrun "puts 'Hello world!'"` |
-| rserver | `ruby -e httpd . -p 8080`              | Start HTTP Webrick serving local directory/files     |
-| gein    | `gem install`                          | Install a gem into the local repository              |
-| geun    | `gem uninstall`                        | Uninstall gems from the local repository             |
-| geli    | `gem list`                             | Display gems installed locally                       |
-| gei     | `gem info`                             | Show information for the given gem                   |
-| geiall  | `gem info --all`                       | Display all gem versions                             |
-| geca    | `gem cert --add`                       | Add a trusted certificate                            |
-| gecr    | `gem cert --remove`                    | Remove a trusted certificate                         |
-| gecb    | `gem cert --build`                     | Build private key and self-signed certificate        |
-| geclup  | `gem cleanup -n`                       | Do not uninstall gem                                 |
-| gegi    | `gem generate_index`                   | Generate index file for gem server                   |
-| geh     | `gem help`                             | Provide additional help                              |
-| gel     | `gem lock`                             | Generate a lockdown list of gems                     |
-| geo     | `gem open`                             | Open gem source in default editor                    |
-| geoe    | `gem open -e`                          | Open gem sources in preferred editor                 |
-
-### poetry
-
-:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry>
-
-Add [`poetry`](https://python-poetry.org/) completion.
 
 ### vscode
 
@@ -142,31 +92,6 @@ Add [`poetry`](https://python-poetry.org/) completion.
 | pipupall | Update all installed packages                 |
 | pipunall | Uninstall all installed packages              |
 
-### adb
-
-:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/adb>
-
-"Adds autocomplete options for all adb commands."-repo README.md
-
->In order to make this work, you will need to have the Android adb tools set up in your path.
-
-### web-search
-
-:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search>
-
-"This plugin adds aliases for searching with Google, Wiki, Bing, YouTube and other popular services." -repo README.md
-
-some of the available context search contexts are:
-
-| Context               | URL                                      |
-| --------------------- | ---------------------------------------- |
-| `google`              | `https://www.google.com/search?q=`       |
-| `brs`                 | `https://search.brave.com/search?q=`     |
-| `ddg` or `duckduckgo` | `https://www.duckduckgo.com/?q=`         |
-| `github`              | `https://github.com/search?q=`           |
-| `goodreads`           | `https://www.goodreads.com/search?q=`    |
-| `stackoverflow`       | `https://stackoverflow.com/search?q=`    |
-
 ### History
 
 :house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history>
@@ -195,20 +120,6 @@ some of the available context search contexts are:
 | `is_json`        |returns true if valid json; false otherwise.          |
 | `urlencode_json` |returns a url encoded string for the given json.      |
 | `urldecode_json` |returns decoded json for the given url encoded string.|
-
-### git-auto-fetch
-
-:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-auto-fetch>
-
-In case we need to enable or disable it per folder:
-
-```shell
-$ cd to/your/project
-$ git-auto-fetch
-disabled
-$ git-auto-fetch
-enabled
-```
 
 ### macos
 
@@ -239,14 +150,6 @@ Here some of the commands
 ### zsh-autosuggestions
 
 :house: repo: <https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md>
-
-### zsh-interactive-cd
-
-:house: repo: <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-interactive-cd>
-
-Provide some interaction for the cd command
-
-> required the installation of [fuzzy finder](https://github.com/junegunn/fzf)
 
 ### zsh-syntax-highlighting
 

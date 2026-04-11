@@ -8,9 +8,6 @@ compinit
 # Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
-# --- ZSH Themes ---
-ZSH_THEME="robbyrussell"
-
 # --- Plugins (reduced from 13 to 8 for faster startup) ---
 # Removed: colorize, ruby, poetry, web-search, git-auto-fetch, zsh-interactive-cd
 plugins=(
@@ -74,9 +71,6 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-# ---- Pokemon-Terminal (terminal backgrounds) ----
-alias pokemon='KITTY_RC_PASSWORD=pokemon pokemon'
-
 # ---- Claude Code (disable Atlassian MCP in CLI, keep in Desktop) ----
 alias claude='claude --disallowedTools "mcp__claude_ai_Atlassian__*"'
 
@@ -98,8 +92,6 @@ fi
 # make sure the PATHs are unique
 typeset -U PATH
 
-#--------- K9S ----------------------------------------------------#
-export KUBECONFIG=$PWD/sporty-pub-prod-codebuild.yaml
 # --------This most be at the end of the file ---------------------#
 
 # history setup
