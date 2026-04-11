@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/vic/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -69,6 +76,9 @@ alias cd="z"
 
 # ---- Pokemon-Terminal (terminal backgrounds) ----
 alias pokemon='KITTY_RC_PASSWORD=pokemon pokemon'
+
+# ---- Claude Code (disable Atlassian MCP in CLI, keep in Desktop) ----
+alias claude='claude --disallowedTools "mcp__claude_ai_Atlassian__*"'
 
 # --- Mise (Tool Version Manager) ---
 if command -v mise >/dev/null 2>&1; then
