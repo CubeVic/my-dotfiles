@@ -24,28 +24,28 @@ error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 # Backup and symlink a file
 link_file() {
-    local src="$1"
-    local dest="$2"
+	local src="$1"
+	local dest="$2"
 
-    # Skip if already correctly linked
-    if [[ -L "$dest" && "$(readlink "$dest")" == "$src" ]]; then
-        info "Already linked: $dest"
-        return 0
-    fi
+	# Skip if already correctly linked
+	if [[ -L "$dest" && "$(readlink "$dest")" == "$src" ]]; then
+		info "Already linked: $dest"
+		return 0
+	fi
 
-    # Backup existing file/symlink
-    if [[ -e "$dest" || -L "$dest" ]]; then
-        mkdir -p "$BACKUP_DIR"
-        warn "Backing up: $dest -> $BACKUP_DIR/"
-        mv "$dest" "$BACKUP_DIR/"
-    fi
+	# Backup existing file/symlink
+	if [[ -e "$dest" || -L "$dest" ]]; then
+		mkdir -p "$BACKUP_DIR"
+		warn "Backing up: $dest -> $BACKUP_DIR/"
+		mv "$dest" "$BACKUP_DIR/"
+	fi
 
-    # Create parent directory if needed
-    mkdir -p "$(dirname "$dest")"
+	# Create parent directory if needed
+	mkdir -p "$(dirname "$dest")"
 
-    # Create symlink
-    ln -sf "$src" "$dest"
-    info "Linked: $src -> $dest"
+	# Create symlink
+	ln -sf "$src" "$dest"
+	info "Linked: $src -> $dest"
 }
 
 echo "============================================="
@@ -55,8 +55,8 @@ echo ""
 
 # Check if dotfiles directory exists
 if [[ ! -d "$DOTFILES_DIR" ]]; then
-    error "Dotfiles directory not found: $DOTFILES_DIR"
-    exit 1
+	error "Dotfiles directory not found: $DOTFILES_DIR"
+	exit 1
 fi
 
 # =============================================================================
@@ -93,7 +93,7 @@ echo "       Installation Complete!"
 echo "============================================="
 
 if [[ -d "$BACKUP_DIR" ]]; then
-    warn "Backups saved to: $BACKUP_DIR"
+	warn "Backups saved to: $BACKUP_DIR"
 fi
 
 echo ""
