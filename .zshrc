@@ -1,8 +1,12 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("$HOME/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
-
-# --- ZSH Themes ---
-ZSH_THEME="robbyrussell"
 
 # --- Plugins (reduced from 13 to 8 for faster startup) ---
 # Removed: colorize, ruby, poetry, web-search, git-auto-fetch, zsh-interactive-cd
@@ -67,6 +71,9 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 
+# ---- Claude Code (disable Atlassian MCP in CLI, keep in Desktop) ----
+alias claude='claude --disallowedTools "mcp__claude_ai_Atlassian__*"'
+
 # --- Mise (Tool Version Manager) ---
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)" || echo "Warning: mise activation failed" >&2
@@ -85,8 +92,6 @@ fi
 # make sure the PATHs are unique
 typeset -U PATH
 
-#--------- K9S ----------------------------------------------------#
-export KUBECONFIG=$PWD/sporty-pub-prod-codebuild.yaml
 # --------This most be at the end of the file ---------------------#
 
 # history setup
@@ -117,3 +122,12 @@ fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# bun completions
+[ -s "/Users/vktor/.bun/_bun" ] && source "/Users/vktor/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude-mem='/Users/vktor/.bun/bin/bun "/Users/vktor/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'

@@ -157,7 +157,6 @@ link_file "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 
 # Mise configuration
 link_file "$DOTFILES_DIR/mise/config.toml" "$HOME/.config/mise/config.toml"
-link_file "$DOTFILES_DIR/mise/mise.tasks.toml" "$HOME/.config/mise/mise.tasks.toml"
 
 # Vim configuration
 link_file "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
