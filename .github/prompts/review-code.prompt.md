@@ -45,7 +45,7 @@ Analyze the selected code for:
 Provide feedback as:
 
 **🔴 Critical Issues** - Must fix before merge
-**🟡 Suggestions** - Improvements to consider  
+**🟡 Suggestions** - Improvements to consider
 **✅ Good Practices** - What's done well
 
 For each issue:
