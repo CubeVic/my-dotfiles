@@ -11,14 +11,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # --- Plugins (reduced from 13 to 8 for faster startup) ---
 # Removed: colorize, ruby, poetry, web-search, git-auto-fetch, zsh-interactive-cd
 plugins=(
-  dotenv              # Load .env files automatically
-  vscode              # VS Code CLI shortcuts
-  pip                 # Python pip completions
-  history             # History search aliases
-  jsontools           # JSON manipulation (pp_json, etc.)
-  macos               # macOS utilities (ofd, cdf, etc.)
-  zsh-autosuggestions # Command suggestions
-  zsh-syntax-highlighting # Must be last
+	dotenv                  # Load .env files automatically
+	vscode                  # VS Code CLI shortcuts
+	pip                     # Python pip completions
+	history                 # History search aliases
+	jsontools               # JSON manipulation (pp_json, etc.)
+	macos                   # macOS utilities (ofd, cdf, etc.)
+	zsh-autosuggestions     # Command suggestions
+	zsh-syntax-highlighting # Must be last
 )
 
 # Load Oh-My-Zsh
@@ -30,11 +30,11 @@ export PATH="/opt/homebrew/bin:$HOME/.local/bin/poetry:$HOME/.local/bin:$PATH"
 # --- Pyenv ---
 export PYENV_ROOT="$HOME/.pyenv"
 if command -v pyenv >/dev/null 2>&1; then
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-  if command -v pyenv-virtualenv-init >/dev/null 2>&1; then
-    eval "$(pyenv virtualenv-init -)"
-  fi
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+	if command -v pyenv-virtualenv-init >/dev/null 2>&1; then
+		eval "$(pyenv virtualenv-init -)"
+	fi
 fi
 
 # --- Starship Prompt ---
@@ -45,21 +45,21 @@ export GPG_TTY=$(tty)
 
 # --- Fuzzy Finder ---
 [ -f ~/.dotfiles/zsh/.fzf.zsh ] && source ~/.dotfiles/zsh/.fzf.zsh
-alias fzfp="fzf --preview 'bat --style=numbers --color=always {}'"  # fzf with bat preview
+alias fzfp="fzf --preview 'bat --style=numbers --color=always {}'" # fzf with bat preview
 
 # --- 1Password CLI (lazy loaded for faster startup) ---
 op() {
-  unfunction op
-  eval "$(command op completion zsh)"
-  compdef _op op
-  command op "$@"
+	unfunction op
+	eval "$(command op completion zsh)"
+	compdef _op op
+	command op "$@"
 }
 
 # --- Custom Scripts ---
-if [ -d "$HOME/.dotfiles/zsh" ] && compgen -G "$HOME/.dotfiles/zsh/*.zsh" > /dev/null; then
-  for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
-    source "${conf}"
-  done
+if [ -d "$HOME/.dotfiles/zsh" ] && compgen -G "$HOME/.dotfiles/zsh/*.zsh" >/dev/null; then
+	for conf in "$HOME/.dotfiles/zsh/"*.zsh; do
+		source "${conf}"
+	done
 fi
 unset conf
 
@@ -76,16 +76,16 @@ alias claude='claude --disallowedTools "mcp__claude_ai_Atlassian__*"'
 
 # --- Mise (Tool Version Manager) ---
 if command -v mise >/dev/null 2>&1; then
-  eval "$(mise activate zsh)" || echo "Warning: mise activation failed" >&2
-  export JAVA_HOME="$(mise where java 2>/dev/null || echo '')"
+	eval "$(mise activate zsh)" || echo "Warning: mise activation failed" >&2
+	export JAVA_HOME="$(mise where java 2>/dev/null || echo '')"
 fi
 
 # --- Android SDK PATH (after mise sets ANDROID_HOME) ---
 # Prepending ensures Android tools take precedence
 if [[ -n "$ANDROID_HOME" && -d "$ANDROID_HOME" ]]; then
-  export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
-  export PATH="$ANDROID_HOME/emulator:$PATH"
-  export PATH="$ANDROID_HOME/platform-tools:$PATH"
+	export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+	export PATH="$ANDROID_HOME/emulator:$PATH"
+	export PATH="$ANDROID_HOME/platform-tools:$PATH"
 fi
 
 # --- Extras --------------------------------------
